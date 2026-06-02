@@ -20,18 +20,15 @@
             --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
             --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 0;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background: #fdf8f0;
@@ -40,8 +37,6 @@
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* ============ SCROLLBAR ============ */
         ::-webkit-scrollbar {
             width: 5px;
         }
@@ -73,26 +68,17 @@
             justify-content: center;
             transition: var(--transition);
             animation: floatMusic 3s ease-in-out infinite;
-        }
-        .music-btn:hover {
-            background: var(--gold);
-            color: white;
-            transform: scale(1.1);
-            box-shadow: var(--shadow-lg);
+            opacity: 0.7;
         }
         .music-btn.playing {
             animation: none;
             background: var(--gold);
             color: white;
+            opacity: 1;
         }
         @keyframes floatMusic {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         /* ============ LOADING SCREEN ============ */
@@ -124,34 +110,13 @@
             font-size: 3rem;
             animation: doveFly 2s ease-in-out infinite;
         }
-        .loading-dove:nth-child(2) {
-            animation-delay: 0.4s;
-            font-size: 2.5rem;
-            margin-top: 20px;
-        }
-        .loading-dove:nth-child(3) {
-            animation-delay: 0.8s;
-            font-size: 2rem;
-            margin-top: 35px;
-        }
+        .loading-dove:nth-child(2) { animation-delay: 0.4s; font-size: 2.5rem; margin-top: 20px; }
+        .loading-dove:nth-child(3) { animation-delay: 0.8s; font-size: 2rem; margin-top: 35px; }
         @keyframes doveFly {
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.7;
-            }
-            25% {
-                transform: translateY(-30px) rotate(-5deg);
-                opacity: 1;
-            }
-            50% {
-                transform: translateY(-15px) rotate(0deg);
-                opacity: 0.9;
-            }
-            75% {
-                transform: translateY(-40px) rotate(5deg);
-                opacity: 1;
-            }
+            0%,100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            25% { transform: translateY(-30px) rotate(-5deg); opacity: 1; }
+            50% { transform: translateY(-15px) rotate(0deg); opacity: 0.9; }
+            75% { transform: translateY(-40px) rotate(5deg); opacity: 1; }
         }
         .loading-text {
             font-family: 'Great Vibes', cursive;
@@ -160,13 +125,8 @@
             animation: pulse 1.5s ease-in-out infinite;
         }
         @keyframes pulse {
-            0%,
-            100% {
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 1;
-            }
+            0%,100% { opacity: 0.5; }
+            50% { opacity: 1; }
         }
 
         /* ============ NAVIGATION ============ */
@@ -196,10 +156,7 @@
             box-shadow: 0 0 15px rgba(212, 167, 69, 0.5);
             transform: scale(1.3);
         }
-        .nav-dot:hover {
-            background: var(--gold);
-            transform: scale(1.2);
-        }
+        .nav-dot:hover { background: var(--gold); transform: scale(1.2); }
         .nav-tooltip {
             position: absolute;
             right: 25px;
@@ -216,24 +173,16 @@
             transition: opacity 0.3s;
             font-family: 'Poppins', sans-serif;
         }
-        .nav-dot:hover .nav-tooltip {
-            opacity: 1;
-        }
+        .nav-dot:hover .nav-tooltip { opacity: 1; }
 
-        /* ============ HERO / COVER SECTION ============ */
+        /* ============ HERO ============ */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background: linear-gradient(180deg,
-                    #fdf8f0 0%,
-                    #fef9f3 20%,
-                    #fdf5ed 40%,
-                    #fef9f3 60%,
-                    #fdf8f0 80%,
-                    #fdf8f0 100%);
+            background: linear-gradient(180deg, #fdf8f0 0%, #fef9f3 20%, #fdf5ed 40%, #fef9f3 60%, #fdf8f0 80%, #fdf8f0 100%);
             overflow: hidden;
             text-align: center;
             padding: 40px 20px;
@@ -241,10 +190,8 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -100px;
-            left: -100px;
-            width: 500px;
-            height: 500px;
+            top: -100px; left: -100px;
+            width: 500px; height: 500px;
             background: radial-gradient(circle, rgba(212, 167, 69, 0.06) 0%, transparent 70%);
             border-radius: 50%;
             animation: floatBg 8s ease-in-out infinite;
@@ -252,32 +199,20 @@
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -100px;
-            right: -100px;
-            width: 450px;
-            height: 450px;
+            bottom: -100px; right: -100px;
+            width: 450px; height: 450px;
             background: radial-gradient(circle, rgba(196, 155, 140, 0.08) 0%, transparent 70%);
             border-radius: 50%;
             animation: floatBg 10s ease-in-out infinite reverse;
         }
         @keyframes floatBg {
-            0%,
-            100% {
-                transform: translate(0, 0);
-            }
-            33% {
-                transform: translate(40px, -30px);
-            }
-            66% {
-                transform: translate(-20px, 20px);
-            }
+            0%,100% { transform: translate(0,0); }
+            33% { transform: translate(40px,-30px); }
+            66% { transform: translate(-20px,20px); }
         }
-
-        /* Floating doves */
         .floating-doves {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             pointer-events: none;
             z-index: 1;
         }
@@ -286,68 +221,21 @@
             font-size: 2.5rem;
             animation: doveFloat 8s ease-in-out infinite;
             opacity: 0.35;
-            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.08));
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.08));
         }
-        .dove:nth-child(1) {
-            top: 12%;
-            left: 8%;
-            animation-delay: 0s;
-            font-size: 3rem;
-        }
-        .dove:nth-child(2) {
-            top: 18%;
-            right: 10%;
-            animation-delay: 2s;
-            font-size: 2.2rem;
-        }
-        .dove:nth-child(3) {
-            bottom: 20%;
-            left: 12%;
-            animation-delay: 4s;
-            font-size: 2.8rem;
-        }
-        .dove:nth-child(4) {
-            bottom: 15%;
-            right: 8%;
-            animation-delay: 6s;
-            font-size: 3.2rem;
-        }
-        .dove:nth-child(5) {
-            top: 35%;
-            left: 50%;
-            animation-delay: 3s;
-            font-size: 2rem;
-        }
-        .dove:nth-child(6) {
-            top: 60%;
-            left: 20%;
-            animation-delay: 5s;
-            font-size: 2.5rem;
-        }
+        .dove:nth-child(1) { top: 12%; left: 8%; font-size: 3rem; }
+        .dove:nth-child(2) { top: 18%; right: 10%; animation-delay: 2s; font-size: 2.2rem; }
+        .dove:nth-child(3) { bottom: 20%; left: 12%; animation-delay: 4s; font-size: 2.8rem; }
+        .dove:nth-child(4) { bottom: 15%; right: 8%; animation-delay: 6s; font-size: 3.2rem; }
+        .dove:nth-child(5) { top: 35%; left: 50%; animation-delay: 3s; font-size: 2rem; }
+        .dove:nth-child(6) { top: 60%; left: 20%; animation-delay: 5s; font-size: 2.5rem; }
         @keyframes doveFloat {
-            0%,
-            100% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0.3;
-            }
-            20% {
-                transform: translateY(-35px) translateX(20px) rotate(-8deg);
-                opacity: 0.5;
-            }
-            40% {
-                transform: translateY(-15px) translateX(-15px) rotate(5deg);
-                opacity: 0.35;
-            }
-            60% {
-                transform: translateY(-45px) translateX(10px) rotate(-3deg);
-                opacity: 0.55;
-            }
-            80% {
-                transform: translateY(-25px) translateX(-10px) rotate(8deg);
-                opacity: 0.4;
-            }
+            0%,100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.3; }
+            20% { transform: translateY(-35px) translateX(20px) rotate(-8deg); opacity: 0.5; }
+            40% { transform: translateY(-15px) translateX(-15px) rotate(5deg); opacity: 0.35; }
+            60% { transform: translateY(-45px) translateX(10px) rotate(-3deg); opacity: 0.55; }
+            80% { transform: translateY(-25px) translateX(-10px) rotate(8deg); opacity: 0.4; }
         }
-
         .hero-content {
             position: relative;
             z-index: 2;
@@ -355,14 +243,8 @@
             animation: fadeInUp 1.2s ease;
         }
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .hero-ornament {
             font-size: 2.5rem;
@@ -371,15 +253,8 @@
             animation: sparkle 2s ease-in-out infinite;
         }
         @keyframes sparkle {
-            0%,
-            100% {
-                opacity: 0.6;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.15);
-            }
+            0%,100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.15); }
         }
         .hero-subtitle {
             font-family: 'Poppins', sans-serif;
@@ -396,8 +271,7 @@
             color: var(--gold);
             line-height: 1.1;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 8px rgba(212, 167, 69, 0.2);
-            font-weight: 400;
+            text-shadow: 2px 2px 8px rgba(212,167,69,0.2);
         }
         .hero-ampersand {
             font-family: 'Playfair Display', serif;
@@ -413,7 +287,6 @@
             color: var(--dark);
             letter-spacing: 3px;
             margin-top: 15px;
-            font-weight: 400;
         }
         .hero-line {
             width: 80px;
@@ -443,17 +316,10 @@
             opacity: 0.7;
             transition: var(--transition);
         }
-        .scroll-indicator:hover {
-            opacity: 1;
-        }
+        .scroll-indicator:hover { opacity: 1; }
         @keyframes bounceDown {
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(15px);
-            }
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(15px); }
         }
 
         /* ============ SECTIONS ============ */
@@ -475,7 +341,6 @@
             color: var(--gold);
             text-align: center;
             margin-bottom: 10px;
-            font-weight: 400;
         }
         .section-subtitle {
             text-align: center;
@@ -495,13 +360,8 @@
             border-radius: 10px;
         }
 
-        /* ============ COUPLE SECTION ============ */
-        .couple-section {
-            background: var(--white);
-            margin: 0;
-            padding: 80px 20px;
-            position: relative;
-        }
+        /* ============ COUPLE ============ */
+        .couple-section { background: var(--white); padding: 80px 20px; }
         .couple-grid {
             display: flex;
             align-items: center;
@@ -522,17 +382,12 @@
             position: relative;
             overflow: hidden;
         }
-        .couple-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
+        .couple-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
         .couple-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
         .couple-avatar {
@@ -546,45 +401,18 @@
             justify-content: center;
             font-size: 3rem;
             border: 3px solid var(--gold-light);
-            box-shadow: 0 8px 25px rgba(212, 167, 69, 0.15);
+            box-shadow: 0 8px 25px rgba(212,167,69,0.15);
             transition: var(--transition);
+            overflow: hidden;
         }
-        .couple-card:hover .couple-avatar {
-            border-color: var(--gold);
-            box-shadow: 0 12px 35px rgba(212, 167, 69, 0.25);
-        }
-        .couple-name {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2rem;
-            color: var(--gold);
-        }
-        .couple-parent {
-            font-size: 0.75rem;
-            color: #9b8c7d;
-            margin-top: 5px;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: 1px;
-        }
-        .couple-dove {
-            font-size: 3rem;
-            color: var(--gold);
-            animation: doveFloat 4s ease-in-out infinite;
-            flex-shrink: 0;
-        }
+        .couple-card:hover .couple-avatar { border-color: var(--gold); box-shadow: 0 12px 35px rgba(212,167,69,0.25); }
+        .couple-name { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--gold); }
+        .couple-parent { font-size: 0.75rem; color: #9b8c7d; margin-top: 5px; font-family: 'Poppins', sans-serif; letter-spacing: 1px; }
+        .couple-dove { font-size: 3rem; color: var(--gold); animation: doveFloat 4s ease-in-out infinite; flex-shrink: 0; }
 
         /* ============ COUNTDOWN ============ */
-        .countdown-section {
-            background: linear-gradient(180deg, #fdf8f0, #fef9f3);
-            text-align: center;
-            padding: 70px 20px;
-        }
-        .countdown-grid {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
+        .countdown-section { background: linear-gradient(180deg, #fdf8f0, #fef9f3); text-align: center; padding: 70px 20px; }
+        .countdown-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
         .countdown-item {
             background: var(--white);
             padding: 20px 18px;
@@ -594,31 +422,12 @@
             transition: var(--transition);
             border: 1px solid #f0e8d8;
         }
-        .countdown-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gold-light);
-        }
-        .countdown-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            line-height: 1;
-        }
-        .countdown-label {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #9b8c7d;
-            margin-top: 5px;
-        }
+        .countdown-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--gold-light); }
+        .countdown-number { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+        .countdown-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #9b8c7d; margin-top: 5px; }
 
-        /* ============ EVENT DETAILS ============ */
-        .details-section {
-            background: var(--white);
-            padding: 80px 20px;
-        }
+        /* ============ DETAILS ============ */
+        .details-section { background: var(--white); padding: 80px 20px; }
         .detail-card {
             background: #fefdfb;
             border-radius: 20px;
@@ -630,37 +439,19 @@
             position: relative;
             overflow: hidden;
         }
-        .detail-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateX(4px);
-        }
+        .detail-card:hover { box-shadow: var(--shadow-lg); transform: translateX(4px); }
         .detail-card::after {
             content: '🕊️';
             position: absolute;
-            right: 20px;
-            top: 50%;
+            right: 20px; top: 50%;
             transform: translateY(-50%);
             font-size: 2.5rem;
             opacity: 0.12;
             pointer-events: none;
         }
-        .detail-icon {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-        .detail-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--dark);
-            letter-spacing: 1px;
-        }
-        .detail-info {
-            color: #6b5d4f;
-            font-size: 0.9rem;
-            margin-top: 4px;
-        }
+        .detail-icon { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+        .detail-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: var(--dark); letter-spacing: 1px; }
+        .detail-info { color: #6b5d4f; font-size: 0.9rem; margin-top: 4px; }
         .btn-maps {
             display: inline-block;
             margin-top: 12px;
@@ -675,21 +466,11 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
         }
-        .btn-maps:hover {
-            background: #c49535;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(212, 167, 69, 0.3);
-        }
+        .btn-maps:hover { background: #c49535; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(212,167,69,0.3); }
 
         /* ============ LOVE STORY ============ */
-        .story-section {
-            background: #fef9f3;
-            padding: 80px 20px;
-        }
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
+        .story-section { background: #fef9f3; padding: 80px 20px; }
+        .timeline { position: relative; padding: 20px 0; }
         .timeline::before {
             content: '';
             position: absolute;
@@ -700,18 +481,9 @@
             background: linear-gradient(180deg, transparent, var(--gold-light), var(--gold), var(--gold-light), transparent);
             top: 0;
         }
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
+        .timeline-item { display: flex; align-items: center; margin-bottom: 40px; position: relative; }
+        .timeline-item:nth-child(odd) { flex-direction: row; }
+        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
         .timeline-content {
             flex: 1;
             padding: 20px 25px;
@@ -722,13 +494,9 @@
             transition: var(--transition);
             position: relative;
         }
-        .timeline-content:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
+        .timeline-content:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .timeline-dot {
-            width: 20px;
-            height: 20px;
+            width: 20px; height: 20px;
             background: var(--gold);
             border-radius: 50%;
             position: absolute;
@@ -739,40 +507,14 @@
             box-shadow: 0 0 0 4px var(--gold-light);
             transition: var(--transition);
         }
-        .timeline-item:hover .timeline-dot {
-            box-shadow: 0 0 0 8px rgba(212, 167, 69, 0.3);
-            background: #c49535;
-        }
-        .timeline-date {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--gold);
-            font-size: 1rem;
-            letter-spacing: 2px;
-        }
-        .timeline-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.6rem;
-            color: var(--dark);
-            margin: 5px 0;
-        }
-        .timeline-text {
-            font-size: 0.85rem;
-            color: #7a6d5f;
-        }
-        .timeline-spacer {
-            flex: 0 0 60px;
-            text-align: center;
-            font-size: 1.5rem;
-            color: var(--gold);
-            opacity: 0.8;
-        }
+        .timeline-item:hover .timeline-dot { box-shadow: 0 0 0 8px rgba(212,167,69,0.3); background: #c49535; }
+        .timeline-date { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+        .timeline-title { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--dark); margin: 5px 0; }
+        .timeline-text { font-size: 0.85rem; color: #7a6d5f; }
+        .timeline-spacer { flex: 0 0 60px; text-align: center; font-size: 1.5rem; color: var(--gold); opacity: 0.8; }
 
         /* ============ GALLERY ============ */
-        .gallery-section {
-            background: var(--white);
-            padding: 80px 20px;
-        }
+        .gallery-section { background: var(--white); padding: 80px 20px; }
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -783,7 +525,7 @@
             border-radius: 16px;
             overflow: hidden;
             cursor: pointer;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 1/1;
             background: #fdf8f0;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -794,35 +536,10 @@
             font-size: 3rem;
             border: 3px solid transparent;
         }
-        .gallery-item:hover {
-            transform: scale(1.04);
-            border-color: var(--gold-light);
-            box-shadow: var(--shadow-lg);
-        }
-        .gallery-item:nth-child(1) {
-            background: linear-gradient(135deg, #fdf5ed, #fce4d6);
-        }
-        .gallery-item:nth-child(2) {
-            background: linear-gradient(135deg, #f9ecec, #f5ddd8);
-        }
-        .gallery-item:nth-child(3) {
-            background: linear-gradient(135deg, #fdf8f0, #fef3e6);
-        }
-        .gallery-item:nth-child(4) {
-            background: linear-gradient(135deg, #fef9f3, #fdf0e8);
-        }
-        .gallery-item:nth-child(5) {
-            background: linear-gradient(135deg, #fdf5ed, #fbe8d8);
-        }
-        .gallery-item:nth-child(6) {
-            background: linear-gradient(135deg, #f9ecec, #fce4d6);
-        }
+        .gallery-item:hover { transform: scale(1.04); border-color: var(--gold-light); box-shadow: var(--shadow-lg); }
 
         /* ============ RSVP ============ */
-        .rsvp-section {
-            background: #fef9f3;
-            padding: 80px 20px;
-        }
+        .rsvp-section { background: #fef9f3; padding: 80px 20px; }
         .rsvp-form {
             background: var(--white);
             padding: 35px 30px;
@@ -832,23 +549,10 @@
             margin: 0 auto;
             transition: var(--transition);
         }
-        .rsvp-form:hover {
-            box-shadow: var(--shadow-lg);
-        }
-        .form-group {
-            margin-bottom: 18px;
-        }
-        .form-group label {
-            display: block;
-            font-weight: 500;
-            margin-bottom: 6px;
-            color: var(--dark);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .rsvp-form:hover { box-shadow: var(--shadow-lg); }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-weight: 500; margin-bottom: 6px; color: var(--dark); font-size: 0.9rem; letter-spacing: 1px; }
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px 16px;
             border: 2px solid #e8ddd0;
@@ -860,12 +564,10 @@
             color: var(--text);
             resize: vertical;
         }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--gold);
-            box-shadow: 0 0 0 4px rgba(212, 167, 69, 0.08);
+            box-shadow: 0 0 0 4px rgba(212,167,69,0.08);
             background: #fff;
         }
         .btn-submit {
@@ -883,31 +585,13 @@
             transition: var(--transition);
             text-transform: uppercase;
         }
-        .btn-submit:hover {
-            background: #c49535;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 167, 69, 0.35);
-        }
-        .rsvp-success {
-            text-align: center;
-            padding: 30px;
-            display: none;
-            animation: fadeInUp 0.6s ease;
-        }
-        .rsvp-success.show {
-            display: block;
-        }
-        .rsvp-success-icon {
-            font-size: 4rem;
-            animation: doveFloat 2s ease-in-out infinite;
-        }
+        .btn-submit:hover { background: #c49535; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(212,167,69,0.35); }
+        .rsvp-success { text-align: center; padding: 30px; display: none; animation: fadeInUp 0.6s ease; }
+        .rsvp-success.show { display: block; }
+        .rsvp-success-icon { font-size: 4rem; animation: doveFloat 2s ease-in-out infinite; }
 
-        /* ============ GIFT SECTION ============ */
-        .gift-section {
-            background: var(--white);
-            padding: 80px 20px;
-            text-align: center;
-        }
+        /* ============ GIFT ============ */
+        .gift-section { background: var(--white); padding: 80px 20px; text-align: center; }
         .gift-card {
             background: #fefdfb;
             padding: 30px;
@@ -918,17 +602,8 @@
             transition: var(--transition);
             border: 2px dashed var(--gold-light);
         }
-        .gift-card:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gold);
-        }
-        .gift-bank {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin: 8px 0;
-            color: var(--dark);
-        }
+        .gift-card:hover { box-shadow: var(--shadow-lg); border-color: var(--gold); }
+        .gift-bank { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 1px; margin: 8px 0; color: var(--dark); }
         .gift-number {
             font-size: 1.2rem;
             font-weight: 700;
@@ -943,19 +618,9 @@
             transition: var(--transition);
             user-select: all;
         }
-        .gift-number:hover {
-            background: var(--gold);
-            color: white;
-        }
-        .copy-tooltip {
-            font-size: 0.7rem;
-            color: var(--rose);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .copy-tooltip.show {
-            opacity: 1;
-        }
+        .gift-number:hover { background: var(--gold); color: white; }
+        .copy-tooltip { font-size: 0.7rem; color: var(--rose); opacity: 0; transition: opacity 0.3s; }
+        .copy-tooltip.show { opacity: 1; }
 
         /* ============ CLOSING ============ */
         .closing-section {
@@ -965,43 +630,13 @@
             position: relative;
             overflow: hidden;
         }
-        .closing-doves {
-            font-size: 3rem;
-            animation: doveFloat 5s ease-in-out infinite;
-            display: inline-block;
-        }
-        .closing-thanks {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin: 15px 0;
-        }
-        .closing-names {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem;
-            color: var(--dark);
-        }
-
-        /* ============ FOOTER ============ */
-        .footer {
-            text-align: center;
-            padding: 25px;
-            font-size: 0.75rem;
-            color: #b5a590;
-            letter-spacing: 2px;
-            background: var(--white);
-        }
+        .closing-doves { font-size: 3rem; animation: doveFloat 5s ease-in-out infinite; display: inline-block; }
+        .closing-thanks { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--gold); margin: 15px 0; }
+        .closing-names { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--dark); }
+        .footer { text-align: center; padding: 25px; font-size: 0.75rem; color: #b5a590; letter-spacing: 2px; background: var(--white); }
 
         /* ============ PARTICLES ============ */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
+        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
         .particle {
             position: absolute;
             font-size: 1rem;
@@ -1009,99 +644,40 @@
             opacity: 0.4;
         }
         @keyframes particleFall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.5;
-            }
-            90% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         }
 
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
-            .nav-dots {
-                right: 8px;
-                gap: 10px;
-            }
-            .nav-dot {
-                width: 9px;
-                height: 9px;
-            }
-            .couple-grid {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            .couple-dove {
-                transform: rotate(90deg);
-                font-size: 2rem;
-            }
-            .timeline::before {
-                left: 20px;
-            }
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                flex-direction: row;
-            }
-            .timeline-content {
-                max-width: 75%;
-                margin-left: 45px;
-            }
-            .timeline-dot {
-                left: 20px;
-            }
-            .timeline-spacer {
-                display: none;
-            }
-            .countdown-grid {
-                gap: 10px;
-            }
-            .countdown-item {
-                min-width: 60px;
-                padding: 15px 10px;
-            }
-            .countdown-number {
-                font-size: 1.8rem;
-            }
-            .dove {
-                font-size: 1.5rem !important;
-            }
-            .hero-names {
-                font-size: 3rem;
-            }
-            .music-btn {
-                bottom: 20px;
-                right: 15px;
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
+            .nav-dots { right: 8px; gap: 10px; }
+            .nav-dot { width: 9px; height: 9px; }
+            .couple-grid { flex-direction: column; align-items: center; gap: 15px; }
+            .couple-dove { transform: rotate(90deg); font-size: 2rem; }
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) { flex-direction: row; }
+            .timeline-content { max-width: 75%; margin-left: 45px; }
+            .timeline-dot { left: 20px; }
+            .timeline-spacer { display: none; }
+            .countdown-grid { gap: 10px; }
+            .countdown-item { min-width: 60px; padding: 15px 10px; }
+            .countdown-number { font-size: 1.8rem; }
+            .dove { font-size: 1.5rem !important; }
+            .hero-names { font-size: 3rem; }
+            .music-btn { bottom: 20px; right: 15px; width: 40px; height: 40px; font-size: 1rem; }
         }
         @media (max-width: 400px) {
-            .timeline-content {
-                max-width: 70%;
-                padding: 15px;
-            }
-            .section-title {
-                font-size: 2.2rem;
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .timeline-content { max-width: 70%; padding: 15px; }
+            .section-title { font-size: 2.2rem; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <!-- ==================== LOADING SCREEN ==================== -->
+    <!-- LOADING SCREEN -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-doves">
             <span class="loading-dove">🕊️</span>
@@ -1111,78 +687,51 @@
         <div class="loading-text">Mempersiapkan Hari Bahagia...</div>
     </div>
 
-    <!-- ==================== MUSIC BUTTON ==================== -->
-    <button class="music-btn playing" id="musicBtn" title="Putar / Hentikan Musik">
+    <!-- MUSIC BUTTON -->
+    <button class="music-btn" id="musicBtn" title="Sentuh untuk memutar musik">
         <i class="fas fa-music"></i>
     </button>
     <audio id="bgMusic" loop preload="auto">
-        <!-- Ganti src dengan URL lagu Anda -->
         <source src="sound.mp3" type="audio/mpeg">
+        <!-- Fallback jika tidak support -->
+        Your browser does not support the audio element.
     </audio>
 
-    <!-- ==================== NAVIGATION DOTS ==================== -->
+    <!-- NAVIGATION DOTS -->
     <div class="nav-dots" id="navDots">
-        <div class="nav-dot active" data-section="hero">
-            <span class="nav-tooltip">Pembuka</span>
-        </div>
-        <div class="nav-dot" data-section="couple">
-            <span class="nav-tooltip">Pengantin</span>
-        </div>
-        <div class="nav-dot" data-section="countdown">
-            <span class="nav-tooltip">Hitung Mundur</span>
-        </div>
-        <div class="nav-dot" data-section="details">
-            <span class="nav-tooltip">Acara</span>
-        </div>
-        <div class="nav-dot" data-section="story">
-            <span class="nav-tooltip">Cerita</span>
-        </div>
-        <div class="nav-dot" data-section="gallery">
-            <span class="nav-tooltip">Galeri</span>
-        </div>
-        <div class="nav-dot" data-section="rsvp">
-            <span class="nav-tooltip">Konfirmasi</span>
-        </div>
-        <div class="nav-dot" data-section="gift">
-            <span class="nav-tooltip">Hadiah</span>
-        </div>
+        <div class="nav-dot active" data-section="hero"><span class="nav-tooltip">Pembuka</span></div>
+        <div class="nav-dot" data-section="couple"><span class="nav-tooltip">Pengantin</span></div>
+        <div class="nav-dot" data-section="countdown"><span class="nav-tooltip">Hitung Mundur</span></div>
+        <div class="nav-dot" data-section="details"><span class="nav-tooltip">Acara</span></div>
+        <div class="nav-dot" data-section="story"><span class="nav-tooltip">Cerita</span></div>
+        <div class="nav-dot" data-section="gallery"><span class="nav-tooltip">Galeri</span></div>
+        <div class="nav-dot" data-section="rsvp"><span class="nav-tooltip">Konfirmasi</span></div>
+        <div class="nav-dot" data-section="gift"><span class="nav-tooltip">Hadiah</span></div>
     </div>
 
-    <!-- ==================== FLOATING PARTICLES ==================== -->
+    <!-- PARTICLES -->
     <div class="particles" id="particles"></div>
 
-    <!-- ==================== HERO / COVER ==================== -->
+    <!-- HERO -->
     <section class="hero" id="hero">
         <div class="floating-doves">
-            <span class="dove">🕊️</span>
-            <span class="dove">🕊️</span>
-            <span class="dove">🕊️</span>
-            <span class="dove">🕊️</span>
-            <span class="dove">🕊️</span>
-            <span class="dove">🕊️</span>
+            <span class="dove">🕊️</span><span class="dove">🕊️</span><span class="dove">🕊️</span>
+            <span class="dove">🕊️</span><span class="dove">🕊️</span><span class="dove">🕊️</span>
         </div>
         <div class="hero-content">
             <div class="hero-ornament">✦</div>
             <p class="hero-subtitle">The Wedding Invitation</p>
-            <h1 class="hero-names">
-                Raka
-                <span class="hero-ampersand">&</span>
-                Sari
-            </h1>
+            <h1 class="hero-names">Raka <span class="hero-ampersand">&</span> Sari</h1>
             <div class="hero-line"></div>
-            <p class="hero-date">12 . 08 . 2025</p>
-            <p class="hero-verse">
-                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
-                pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram
-                kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
-            </p>
+            <p class="hero-date">12 . 08 . 2026</p>
+            <p class="hero-verse">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."</p>
         </div>
         <div class="scroll-indicator" onclick="document.getElementById('couple').scrollIntoView({behavior:'smooth'})">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- ==================== COUPLE ==================== -->
+    <!-- COUPLE -->
     <section class="couple-section section" id="couple">
         <div class="section-inner">
             <h2 class="section-title">Kedua Mempelai</h2>
@@ -1190,17 +739,13 @@
             <div class="section-line"></div>
             <div class="couple-grid">
                 <div class="couple-card">
-                    <div class="couple-avatar">
-    <img src="wanita.jpeg" alt="Sari" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-</div>
+                    <div class="couple-avatar"><img src="wanita.jpeg" alt="Sari" style="width:100%; height:100%; object-fit:cover;"></div>
                     <h3 class="couple-name">Sari Anggraini</h3>
                     <p class="couple-parent">Putri dari <br>Bpk. Budi Santoso & Ibu Ratna Dewi</p>
                 </div>
                 <div class="couple-dove">🕊️</div>
                 <div class="couple-card">
-                    <div class="couple-avatar">
-    <img src="pria.jpg" alt="Raka" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-</div>
+                    <div class="couple-avatar"><img src="pria.jpg" alt="Raka" style="width:100%; height:100%; object-fit:cover;"></div>
                     <h3 class="couple-name">Raka Pratama</h3>
                     <p class="couple-parent">Putra dari <br>Bpk. Hendra Wijaya & Ibu Maya Sari</p>
                 </div>
@@ -1208,65 +753,47 @@
         </div>
     </section>
 
-    <!-- ==================== COUNTDOWN ==================== -->
+    <!-- COUNTDOWN -->
     <section class="countdown-section section" id="countdown">
         <div class="section-inner">
             <h2 class="section-title">Menghitung Hari</h2>
             <p class="section-subtitle">Countdown to Our Day</p>
             <div class="section-line"></div>
             <div class="countdown-grid" id="countdownGrid">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">00</div>
-                    <div class="countdown-label">Hari</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">00</div>
-                    <div class="countdown-label">Jam</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">00</div>
-                    <div class="countdown-label">Menit</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">00</div>
-                    <div class="countdown-label">Detik</div>
-                </div>
+                <div class="countdown-item"><div class="countdown-number" id="days">00</div><div class="countdown-label">Hari</div></div>
+                <div class="countdown-item"><div class="countdown-number" id="hours">00</div><div class="countdown-label">Jam</div></div>
+                <div class="countdown-item"><div class="countdown-number" id="minutes">00</div><div class="countdown-label">Menit</div></div>
+                <div class="countdown-item"><div class="countdown-number" id="seconds">00</div><div class="countdown-label">Detik</div></div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== EVENT DETAILS ==================== -->
+    <!-- EVENT DETAILS -->
     <section class="details-section section" id="details">
         <div class="section-inner">
             <h2 class="section-title">Rangkaian Acara</h2>
             <p class="section-subtitle">Save the Date</p>
             <div class="section-line"></div>
-
             <div class="detail-card">
                 <div class="detail-icon">💍</div>
                 <h3 class="detail-title">Akad Nikah</h3>
-                <p class="detail-info"><strong>📅 Selasa, 12 Agustus 2025</strong></p>
+                <p class="detail-info"><strong>📅 Selasa, 12 Agustus 2026</strong></p>
                 <p class="detail-info">🕗 08:00 - 10:00 WIB</p>
                 <p class="detail-info">📍 Masjid Raya Al-Ikhlas, Jl. Melati No. 12, Jakarta Pusat</p>
-                <a href="https://maps.google.com" target="_blank" class="btn-maps">
-                    <i class="fas fa-map-marker-alt"></i> Lihat Lokasi
-                </a>
+                <a href="https://maps.google.com" target="_blank" class="btn-maps"><i class="fas fa-map-marker-alt"></i> Lihat Lokasi</a>
             </div>
-
             <div class="detail-card">
                 <div class="detail-icon">🥂</div>
                 <h3 class="detail-title">Resepsi</h3>
-                <p class="detail-info"><strong>📅 Selasa, 12 Agustus 2025</strong></p>
+                <p class="detail-info"><strong>📅 Selasa, 12 Agustus 2026</strong></p>
                 <p class="detail-info">🕚 11:00 - 16:00 WIB</p>
                 <p class="detail-info">📍 Gedung Anggrek Ballroom, Jl. Mawar No. 45, Jakarta Selatan</p>
-                <a href="https://maps.google.com" target="_blank" class="btn-maps">
-                    <i class="fas fa-map-marker-alt"></i> Lihat Lokasi
-                </a>
+                <a href="https://maps.google.com" target="_blank" class="btn-maps"><i class="fas fa-map-marker-alt"></i> Lihat Lokasi</a>
             </div>
         </div>
     </section>
 
-    <!-- ==================== LOVE STORY ==================== -->
+    <!-- LOVE STORY -->
     <section class="story-section section" id="story">
         <div class="section-inner">
             <h2 class="section-title">Cerita Cinta</h2>
@@ -1302,7 +829,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">2025</span>
+                        <span class="timeline-date">2026</span>
                         <h4 class="timeline-title">Pernikahan</h4>
                         <p class="timeline-text">Hari yang dinanti tiba. Dua hati, satu cinta, selamanya. 🕊️🤍</p>
                     </div>
@@ -1313,94 +840,68 @@
         </div>
     </section>
 
-    <!-- ==================== GALLERY ==================== -->
+    <!-- GALLERY -->
     <section class="gallery-section section" id="gallery">
         <div class="section-inner">
             <h2 class="section-title">Galeri Cinta</h2>
             <p class="section-subtitle">Our Beautiful Moments</p>
             <div class="section-line"></div>
             <div class="gallery-grid">
-                <div class="gallery-item">
-    <img src="foto1.jpg" alt="Momen 1" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-</div>
-                <div class="gallery-item">
-    <img src="foto2.jpg" alt="Momen 1" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-</div>
-                <div class="gallery-item">
-    <img src="foto3.jpg" alt="Momen 1" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-</div>
-                <div class="gallery-item">
-    <img src="foto4.jpg" alt="Momen 1" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-</div>
+                <div class="gallery-item"><img src="foto1.jpg" alt="Momen 1" style="width:100%; height:100%; object-fit:cover; border-radius:16px;"></div>
+                <div class="gallery-item"><img src="foto2.jpg" alt="Momen 2" style="width:100%; height:100%; object-fit:cover; border-radius:16px;"></div>
+                <div class="gallery-item"><img src="foto3.jpg" alt="Momen 3" style="width:100%; height:100%; object-fit:cover; border-radius:16px;"></div>
+                <div class="gallery-item"><img src="foto4.jpg" alt="Momen 4" style="width:100%; height:100%; object-fit:cover; border-radius:16px;"></div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== RSVP ==================== -->
-<section class="rsvp-section section" id="rsvp">
-    <div class="section-inner">
-        <h2 class="section-title">Konfirmasi Kehadiran</h2>
-        <p class="section-subtitle">RSVP</p>
-        <div class="section-line"></div>
-        <div class="rsvp-form" id="rsvpFormContainer">
-            <!-- 
-                Ganti URL di action dengan endpoint Formspree Anda!
-                Contoh: action="https://formspree.io/f/xyz12345"
-            -->
-            <form id="rsvpForm"
-                  action="https://formspree.io/f/your-form-id"
-                  method="POST">
-
-                <!-- Input tersembunyi untuk subjek email -->
-                <input type="hidden" name="_subject" value="RSVP Pernikahan Raka & Sari">
-                <!-- Anti-spam (jangan diisi) -->
-                <input type="text" name="_gotcha" style="display:none;">
-
-                <div class="form-group">
-                    <label>Nama Lengkap</label>
-                    <input type="text" name="Nama" placeholder="Tulis nama Anda..." required>
+    <!-- RSVP -->
+    <section class="rsvp-section section" id="rsvp">
+        <div class="section-inner">
+            <h2 class="section-title">Konfirmasi Kehadiran</h2>
+            <p class="section-subtitle">RSVP</p>
+            <div class="section-line"></div>
+            <div class="rsvp-form" id="rsvpFormContainer">
+                <form id="rsvpForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <input type="hidden" name="_subject" value="RSVP Pernikahan Raka & Sari">
+                    <input type="text" name="_gotcha" style="display:none;">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" name="Nama" placeholder="Tulis nama Anda..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Konfirmasi</label>
+                        <select name="Konfirmasi" required>
+                            <option value="">-- Pilih --</option>
+                            <option value="Hadir">✅ Ya, Saya Hadir</option>
+                            <option value="Tidak Hadir">🙏 Maaf, Tidak Bisa Hadir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Jumlah Tamu</label>
+                        <select name="Jumlah Tamu">
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                            <option value="3">3 Orang</option>
+                            <option value="4">4 Orang</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ucapan & Doa</label>
+                        <textarea name="Pesan" rows="3" placeholder="Tulis ucapan untuk kedua mempelai..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim Konfirmasi</button>
+                </form>
+                <div class="rsvp-success" id="rsvpSuccess">
+                    <div class="rsvp-success-icon">🕊️</div>
+                    <h3 style="font-family:'Great Vibes',cursive;font-size:2rem;color:var(--gold);">Terima Kasih!</h3>
+                    <p>Konfirmasi Anda telah terkirim. <br>Doa Anda sangat berarti bagi kami. 🤍</p>
                 </div>
-
-                <div class="form-group">
-                    <label>Konfirmasi</label>
-                    <select name="Konfirmasi" required>
-                        <option value="">-- Pilih --</option>
-                        <option value="Hadir">✅ Ya, Saya Hadir</option>
-                        <option value="Tidak Hadir">🙏 Maaf, Tidak Bisa Hadir</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Jumlah Tamu</label>
-                    <select name="Jumlah Tamu">
-                        <option value="1">1 Orang</option>
-                        <option value="2">2 Orang</option>
-                        <option value="3">3 Orang</option>
-                        <option value="4">4 Orang</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Ucapan & Doa</label>
-                    <textarea name="Pesan" rows="3" placeholder="Tulis ucapan untuk kedua mempelai..."></textarea>
-                </div>
-
-                <button type="submit" class="btn-submit">
-                    <i class="fas fa-paper-plane"></i> Kirim Konfirmasi
-                </button>
-            </form>
-
-            <!-- Pesan sukses (awalnya tersembunyi) -->
-            <div class="rsvp-success" id="rsvpSuccess">
-                <div class="rsvp-success-icon">🕊️</div>
-                <h3 style="font-family:'Great Vibes',cursive;font-size:2rem;color:var(--gold);">Terima Kasih!</h3>
-                <p>Konfirmasi Anda telah terkirim. <br>Doa Anda sangat berarti bagi kami. 🤍</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- ==================== GIFT ==================== -->
+    <!-- GIFT -->
     <section class="gift-section section" id="gift">
         <div class="section-inner">
             <h2 class="section-title">Hadiah Pernikahan</h2>
@@ -1410,13 +911,13 @@
                 <p style="font-size:0.9rem;color:#6b5d4f;">Doa restu Anda adalah hadiah terindah. <br>Namun jika berkenan, Anda dapat mengirimkan hadiah melalui:</p>
                 <div style="margin-top:15px;">
                     <p class="gift-bank">🏦 BCA</p>
-                    <span class="gift-number" onclick="copyToClipboard('1234567890', this)" title="Klik untuk salin">1234567890</span>
+                    <span class="gift-number" onclick="copyToClipboard('1234567890', this)">1234567890</span>
                     <span class="copy-tooltip" id="copyTooltip1">Tersalin! ✅</span>
                     <p style="font-size:0.75rem;color:#9b8c7d;">a.n. Raka Pratama</p>
                 </div>
                 <div style="margin-top:10px;">
                     <p class="gift-bank">🏦 Mandiri</p>
-                    <span class="gift-number" onclick="copyToClipboard('0987654321', this)" title="Klik untuk salin">0987654321</span>
+                    <span class="gift-number" onclick="copyToClipboard('0987654321', this)">0987654321</span>
                     <span class="copy-tooltip" id="copyTooltip2">Tersalin! ✅</span>
                     <p style="font-size:0.75rem;color:#9b8c7d;">a.n. Sari Anggraini</p>
                 </div>
@@ -1425,7 +926,7 @@
         </div>
     </section>
 
-    <!-- ==================== CLOSING ==================== -->
+    <!-- CLOSING -->
     <section class="closing-section section" id="closing">
         <div class="section-inner">
             <span class="closing-doves">🕊️ 🕊️ 🕊️</span>
@@ -1441,9 +942,9 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- FOOTER -->
     <div class="footer">
-        <p>🕊️ Dibuat dengan cinta | Raka & Sari | 2025 🕊️</p>
+        <p>🕊️ Dibuat dengan cinta | Raka & Sari | 2026 🕊️</p>
     </div>
 
     <script>
@@ -1451,44 +952,61 @@
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loadingScreen').classList.add('hidden');
-                // Coba putar musik setelah loading
-                const music = document.getElementById('bgMusic');
-                const musicBtn = document.getElementById('musicBtn');
-                music.volume = 0.5;
-                music.play().then(() => {
-                    musicBtn.classList.add('playing');
-                }).catch(() => {
-                    musicBtn.classList.remove('playing');
-                });
+                // Tidak memaksa autoplay musik di sini, biarkan user yang memulai
             }, 2500);
         });
 
-        // ==================== MUSIC CONTROL ====================
+        // ==================== MUSIC CONTROL (Mobile Friendly) ====================
         const musicBtn = document.getElementById('musicBtn');
         const bgMusic = document.getElementById('bgMusic');
-        let isMusicPlaying = true;
+        let isMusicPlaying = false;
 
+        // Fungsi untuk mencoba memutar musik
+        function tryPlayMusic() {
+            bgMusic.play().then(() => {
+                // Berhasil
+                musicBtn.classList.add('playing');
+                musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+                musicBtn.title = 'Putar / Hentikan Musik';
+                isMusicPlaying = true;
+            }).catch(err => {
+                // Gagal (biasanya karena autoplay policy)
+                console.warn('Autoplay dicegah. Silakan sentuh tombol musik.');
+                musicBtn.classList.remove('playing');
+                musicBtn.innerHTML = '<i class="fas fa-music" style="opacity:0.6;"></i>';
+                musicBtn.title = 'Sentuh untuk memutar musik';
+                isMusicPlaying = false;
+                // Setelah 4 detik kembalikan title default
+                setTimeout(() => { musicBtn.title = 'Putar / Hentikan Musik'; }, 4000);
+            });
+        }
+
+        // Event klik tombol musik
         musicBtn.addEventListener('click', () => {
             if (isMusicPlaying) {
+                // Pause
                 bgMusic.pause();
                 musicBtn.classList.remove('playing');
-                musicBtn.innerHTML = '<i class="fas fa-music" style="opacity:0.5;"></i>';
+                musicBtn.innerHTML = '<i class="fas fa-music" style="opacity:0.6;"></i>';
+                musicBtn.title = 'Sentuh untuk memutar musik';
+                isMusicPlaying = false;
             } else {
-                bgMusic.play().then(() => {
-                    musicBtn.classList.add('playing');
-                    musicBtn.innerHTML = '<i class="fas fa-music"></i>';
-                }).catch(() => {});
+                // Play
+                tryPlayMusic();
             }
-            isMusicPlaying = !isMusicPlaying;
+        });
+
+        // Jika audio error (file tidak ditemukan, dll)
+        bgMusic.addEventListener('error', () => {
+            musicBtn.style.display = 'none'; // Sembunyikan tombol jika musik tidak tersedia
+            console.error('File audio tidak ditemukan atau format tidak didukung.');
         });
 
         // ==================== COUNTDOWN ====================
         const weddingDate = new Date('2026-08-12T08:00:00+07:00').getTime();
-
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
-
             if (distance < 0) {
                 document.getElementById('days').textContent = '00';
                 document.getElementById('hours').textContent = '00';
@@ -1496,18 +1014,14 @@
                 document.getElementById('seconds').textContent = '00';
                 return;
             }
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
             document.getElementById('days').textContent = String(days).padStart(2, '0');
             document.getElementById('hours').textContent = String(hours).padStart(2, '0');
             document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
             document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-            // Animasi kecil saat detik berubah
             const secEl = document.getElementById('seconds');
             secEl.style.transform = 'scale(1.2)';
             setTimeout(() => { secEl.style.transform = 'scale(1)'; }, 150);
@@ -1533,55 +1047,46 @@
         }
         createParticles();
 
-        // ==================== RSVP FORM - FORMSPREE ====================
-const rsvpForm = document.getElementById('rsvpForm');
-const rsvpSuccess = document.getElementById('rsvpSuccess');
-
-rsvpForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Mencegah submit bawaan (redirect)
-
-    const formData = new FormData(rsvpForm);
-    const actionURL = rsvpForm.getAttribute('action');
-
-    // Kirim data dengan fetch (AJAX) ke Formspree
-    fetch(actionURL, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json' // Formspree akan merespon JSON
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            // Sembunyikan form, tampilkan pesan sukses
-            rsvpForm.style.display = 'none';
-            rsvpSuccess.classList.add('show');
-        } else {
-            return response.json().then(data => {
-                if (data.errors) {
-                    alert(data.errors.map(error => error.message).join("\n"));
+        // ==================== RSVP FORM ====================
+        const rsvpForm = document.getElementById('rsvpForm');
+        const rsvpSuccess = document.getElementById('rsvpSuccess');
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(rsvpForm);
+            const actionURL = rsvpForm.getAttribute('action');
+            fetch(actionURL, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    rsvpForm.style.display = 'none';
+                    rsvpSuccess.classList.add('show');
                 } else {
-                    alert('Terjadi kesalahan. Silakan coba lagi.');
+                    return response.json().then(data => {
+                        if (data.errors) {
+                            alert(data.errors.map(error => error.message).join("\n"));
+                        } else {
+                            alert('Terjadi kesalahan. Silakan coba lagi.');
+                        }
+                    });
                 }
+            })
+            .catch(error => {
+                alert('Gagal mengirim. Periksa koneksi internet Anda.');
+                console.error(error);
             });
-        }
-    })
-    .catch(error => {
-        alert('Gagal mengirim. Periksa koneksi internet Anda.');
-        console.error(error);
-    });
-});
+        });
 
         // ==================== COPY TO CLIPBOARD ====================
         function copyToClipboard(text, element) {
             navigator.clipboard.writeText(text).then(() => {
-                // Cari tooltip terdekat
                 const tooltip = element.nextElementSibling;
                 if (tooltip && tooltip.classList.contains('copy-tooltip')) {
                     tooltip.classList.add('show');
                     setTimeout(() => tooltip.classList.remove('show'), 2000);
                 }
-                // Animasi singkat
                 element.style.transform = 'scale(1.05)';
                 setTimeout(() => { element.style.transform = 'scale(1)'; }, 200);
             }).catch(() => {
@@ -1592,7 +1097,6 @@ rsvpForm.addEventListener('submit', function(e) {
         // ==================== NAVIGATION DOTS ====================
         const sections = document.querySelectorAll('section[id]');
         const navDots = document.querySelectorAll('.nav-dot');
-
         function updateActiveDot() {
             let current = '';
             sections.forEach(section => {
@@ -1609,35 +1113,15 @@ rsvpForm.addEventListener('submit', function(e) {
             });
         }
         window.addEventListener('scroll', updateActiveDot);
-
         navDots.forEach(dot => {
             dot.addEventListener('click', () => {
                 const targetId = dot.getAttribute('data-section');
                 const target = document.getElementById(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // ==================== GALLERY CLICK ====================
-        document.querySelectorAll('.gallery-item').forEach((item, index) => {
-            item.addEventListener('click', () => {
-                alert(
-                    '📸 Foto ' + (index + 1) +
-                    '\n\nGanti placeholder ini dengan foto asli Anda!\nTambahkan tag <img> di dalam .gallery-item');
-            });
-        });
-
-        // ==================== SMOOTH SCROLL FOR SCROLL INDICATOR ====================
-        // Already handled inline
-
-        console.log('🕊️  Undangan Pernikahan Digital Siap!');
-        console.log('💍  Raka & Sari - 12 Agustus 2025');
-        console.log('✨  Fitur: Countdown, RSVP, Musik, Galeri, Love Story, Gift, Animasi Merpati');
-        console.log('📋  Data RSVP tersimpan di localStorage browser');
-        console.log('🎵  Ganti URL musik di tag <audio> dengan lagu pilihan Anda');
-        console.log('📸  Ganti placeholder galeri dengan foto asli');
+        console.log('🕊️ Undangan siap! Sentuh tombol musik untuk memulai lagu.');
     </script>
 </body>
 </html>
